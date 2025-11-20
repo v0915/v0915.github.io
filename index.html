@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Confluence Checklist + Summary (Fixed Daily)</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">CHK</div>
+      <div>
+        <h1>Confluence Checklist</h1>
+        <div class="muted">Toggle items, edit percentages, totals & summary auto-update</div>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button id="editPctBtn" class="btn">Edit percentages</button>
+      <button id="clearBtn" class="btn ghost">Reset saved</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- WEEKLY -->
+    <section class="card" data-section="weekly">
+      <div class="card-head">
+        <div>
+          <h2>WEEKLY</h2>
+          <div class="muted small">0% confluence</div>
+        </div>
+        <div class="total" id="total-weekly">0%</div>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="label">Trend</div>
+          <div class="right">
+            <div class="pct"><span class="pct-label" data-value="10">+10%</span></div>
+            <label class="switch">
+              <input type="checkbox" class="toggle" data-section="weekly" data-value="10">
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="label">At AOI / Rejected</div>
+          <div class="right">
+            <div class="pct"><span class="pct-label" data-value="10">+10%</span></div>
+            <label class="switch">
+              <input type="checkbox" class="toggle" data-section="weekly" data-value="10">
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="label">Touching EMA</div>
+          <div class="right">
+            <div class="pct"><span class="pct-label" data-value="5">+5%</span></div>
+            <label class="switch">
+              <input type="checkbox" class="toggle" data-section="weekly" data-value="5">
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="label">Round Psychological Level</div>
+          <div class="right">
+            <div class="pct"><span class="pct-label" data-value="5">+5%</span></div>
+            <label class="switch">
+              <input type="checkbox" class="toggle" data-section="weekly" data-value="5">
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="label">Rejection from Previous Structure</div>
+          <div class="right">
+            <div class="pct"><span class="pct-label" data-value="10">+10%</span></div>
+            <label class="switch">
+              <input type="checkbox" class="toggle" data-section="weekly" data-value="10">
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="label">Break & Retest / Head & Shoulders Pattern</div>
+          <div class="right">
+            <div class="pct"><span class="pct-label" data-value="10">+10%</span></div>
+            <label class="switch">
+              <input type="checkbox" class="toggle" data-section="weekly" data-value="10">
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DAILY (fixed; includes Rejection from Previous Structure +10%) -->
+    <section class="card" data-section="daily">
+      <div class="card-head">
+        <div>
+          <h2>DAILY</h2>
+          <div class="muted small">0% confluence</div>
+        </div>
+        <div class="total" id="total-daily">0%</div>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="label">Trend</div>
+          <div class="right">
+            <div class="pct"><span class="pct-label" data-value="10">+10%</span></div>
+            <label class="switch">
+              <input type="checkbox" class="toggle" data-section="daily" data-value="10">
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="label">At AOI / Rejected</div>
+          <div class="right">
+            <div class="pct"><span class="pct-label" data-value="10">+10%</span></div>
+            <label class="switch">
+              <input type="checkbox" class="toggle" data-section="daily" data-value="10">
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="label">Touching EMA</div>
+          <div class="right">
+            <div class="pct"><span class="pct-label" data-value="5">+5%</span></div>
+            <label class="switch">
+              <input type="checkbox" class="toggle" data-section="daily" data-value="5">
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="label">Round Psychological Level</div>
+          <div class="right">
+            <div class="pct"><span class="pct-label" data-value="10">+10%</span></div>
+            <label class="switch">
+              <input type="checkbox" class="toggle" data-section="daily" data-value="10">
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
+
+        <!-- NEW: Rejection from Previous Structure -->
+        <div class="row">
+          <div class="label">Rejection from Previous Structure</div>
+          <div class="right">
+            <div class="pct"><span class="pct-label" data-value="10">+10%</span></div>
+            <label class="switch">
+              <input type="checkbox" class="toggle" data-section="daily" data-value="10">
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="label">Candlestick Rejection from AOI</div>
+          <div class="right">
+            <div class="pct"><span class="pct-label" data-value="10">+10%</span></div>
+            <label class="switch">
+              <input type="checkbox" class="toggle" data-section="daily" data-value="10">
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="label">Break & Retest / Head & Shoulders Pattern</div>
+          <div class="right">
+            <div class="pct"><span class="pct-label" data-value="10">+10%</span></div>
+            <label class="switch">
+              <input type="checkbox" class="toggle" data-section="daily" data-value="10">
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOWER TF -->
+    <section class="card" data-section="lower-tf">
+      <div class="card-head">
+        <div>
+          <h2>LOWER TF</h2>
+          <div class="muted small">20% confluence</div>
+        </div>
+        <div class="total" id="total-lower-tf">0%</div>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="label">Shift of structure on the lower time frame</div>
+          <div class="right">
+            <div class="pct"><span class="pct-label" data-value="10">+10%</span></div>
+            <label class="switch">
+              <input type="checkbox" class="toggle" data-section="lower-tf" data-value="10">
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="label">Engulfing candlestick (5 min, 15 min, 30 min)</div>
+          <div class="right">
+            <div class="pct"><span class="pct-label" data-value="10">+10%</span></div>
+            <label class="switch">
+              <input type="checkbox" class="toggle" data-section="lower-tf" data-value="10">
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4H -->
+    <section class="card" data-section="4h">
+      <div class="card-head">
+        <div>
+          <h2>4H</h2>
+          <div class="muted small">20% confluence</div>
+        </div>
+        <div class="total" id="total-4h">0%</div>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="label">Trend</div>
+          <div class="right">
+            <div class="pct"><span class="pct-label" data-value="5">+5%</span></div>
+            <label class="switch">
+              <input type="checkbox" class="toggle" data-section="4h" data-value="5">
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="label">At AOI / Rejected</div>
+          <div class="right">
+            <div class="pct"><span class="pct-label" data-value="10">+10%</span></div>
+            <label class="switch">
+              <input type="checkbox" class="toggle" data-section="4h" data-value="10">
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="label">Touching EMA</div>
+          <div class="right">
+            <div class="pct"><span class="pct-label" data-value="5">+5%</span></div>
+            <label class="switch">
+              <input type="checkbox" class="toggle" data-section="4h" data-value="5">
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="label">Round Psychological Level</div>
+          <div class="right">
+            <div class="pct"><span class="pct-label" data-value="10">+10%</span></div>
+            <label class="switch">
+              <input type="checkbox" class="toggle" data-section="4h" data-value="10">
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="label">Rejection from Previous Structure</div>
+          <div class="right">
+            <div class="pct"><span class="pct-label" data-value="10">+10%</span></div>
+            <label class="switch">
+              <input type="checkbox" class="toggle" data-section="4h" data-value="10">
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="label">Candlestick Rejection from AOI</div>
+          <div class="right">
+            <div class="pct"><span class="pct-label" data-value="5">+5%</span></div>
+            <label class="switch">
+              <input type="checkbox" class="toggle" data-section="4h" data-value="5">
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="label">Break & Retest / Head & Shoulders Pattern</div>
+          <div class="right">
+            <div class="pct"><span class="pct-label" data-value="10">+10%</span></div>
+            <label class="switch">
+              <input type="checkbox" class="toggle" data-section="4h" data-value="10">
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2H,1H,30m -->
+    <section class="card" data-section="lower-multiples">
+      <div class="card-head">
+        <div>
+          <h2>2H, 1H, 30m</h2>
+          <div class="muted small">6% confluence</div>
+        </div>
+        <div class="total" id="total-lower-multiples">0%</div>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="label">Trend</div>
+          <div class="right">
+            <div class="pct"><span class="pct-label" data-value="5">+5%</span></div>
+            <label class="switch">
+              <input type="checkbox" class="toggle" data-section="lower-multiples" data-value="5">
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="label">At AOI / Rejected</div>
+          <div class="right">
+            <div class="pct"><span class="pct-label" data-value="5">+5%</span></div>
+            <label class="switch">
+              <input type="checkbox" class="toggle" data-section="lower-multiples" data-value="5">
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="label">Touching EMA</div>
+          <div class="right">
+            <div class="pct"><span class="pct-label" data-value="5">+5%</span></div>
+            <label class="switch">
+              <input type="checkbox" class="toggle" data-section="lower-multiples" data-value="5">
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="label">Round Psychological Level</div>
+          <div class="right">
+            <div class="pct"><span class="pct-label" data-value="10">+10%</span></div>
+            <label class="switch">
+              <input type="checkbox" class="toggle" data-section="lower-multiples" data-value="10">
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="label">Rejection from Previous Structure</div>
+          <div class="right">
+            <div class="pct"><span class="pct-label" data-value="10">+10%</span></div>
+            <label class="switch">
+              <input type="checkbox" class="toggle" data-section="lower-multiples" data-value="10">
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="label">Break & Retest / Head & Shoulders Pattern</div>
+          <div class="right">
+            <div class="pct"><span class="pct-label" data-value="10">+10%</span></div>
+            <label class="switch">
+              <input type="checkbox" class="toggle" data-section="lower-multiples" data-value="10">
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Confluence Summary -->
+    <section class="card summary-card" aria-labelledby="summaryTitle">
+      <div class="card-head">
+        <h2 id="summaryTitle">Confluence Summary</h2>
+      </div>
+
+      <div class="summary-grid">
+        <div class="summary-item">
+          <div class="small muted">WEEKLY</div>
+          <div class="summary-value" id="summary-weekly">0%</div>
+        </div>
+
+        <div class="summary-item">
+          <div class="small muted">DAILY</div>
+          <div class="summary-value" id="summary-daily">0%</div>
+        </div>
+
+        <div class="summary-item">
+          <div class="small muted">4H</div>
+          <div class="summary-value" id="summary-4h">0%</div>
+        </div>
+
+        <div class="summary-item">
+          <div class="small muted">2H, 1H, 30m</div>
+          <div class="summary-value" id="summary-lower-multiples">0%</div>
+        </div>
+
+        <div class="summary-item">
+          <div class="small muted">LOWER TF</div>
+          <div class="summary-value" id="summary-lower-tf">0%</div>
+        </div>
+      </div>
+
+      <div class="overall-box">
+        <div class="muted">TOTAL OVERALL SCORE</div>
+        <div class="overall-score" id="summary-overall">0%</div>
+        <div class="muted small" id="summary-label">No confluence</div>
+      </div>
+
+      <!-- RESET ALL button under summary -->
+      <div class="reset-wrap">
+        <button id="resetAllBtn" class="btn reset">RESET ALL</button>
+      </div>
+    </section>
+
+    <!-- Preview images using your uploaded screenshots (local paths) -->
+    <section class="card image-card">
+      <div class="card-head">
+        <div>
+          <h2>Uploaded previews</h2>
+          <div class="muted small">Local screenshots included</div>
+        </div>
+      </div>
+      <div class="card-body preview">
+        <img src="/mnt/data/Weekly Daily Checklist.png" alt="weekly-daily" />
+        <img src="/mnt/data/lower tf checklist.png" alt="lower-tf" />
+        <img src="/mnt/data/4h,2h,1,30m checlist.png" alt="4h and multiples" />
+        <img src="/mnt/data/3565f95d-1c59-447d-ad1b-2690fd96c476.png" alt="extra" />
+        <img src="/mnt/data/conflu v24.png" alt="confluence summary screenshot" />
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
